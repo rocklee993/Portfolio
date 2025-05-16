@@ -4,7 +4,7 @@ import PixelHeader from './components/PixelHeader';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import SkillsSection from './components/SkillsSection';
-import Details from './components/details';
+import Details from './components/Details';
 import './App.css'
 
 function App() {

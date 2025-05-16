@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import avatar from "/images/me.jpg";
+
 import ParticlesBackground from "./Particles";
 const titles = ["CS Student", "Web Developer", "Software Developer", "Game Developer", "Pixel Tinkerer", "Code Alchemist", "Curious Learner"];
 
@@ -74,7 +74,7 @@ const HeroSection = () => {
         rel="noopener noreferrer"
       >
         <img
-          src={avatar}
+          src={"/images/me.jpg"}
           alt="Avatar"
           className="w-40 h-40 object-cover rounded-full border-4 border-yellow-300 shadow-lg animate-bounce mt-10"
         />
