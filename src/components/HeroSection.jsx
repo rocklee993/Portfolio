@@ -58,7 +58,7 @@ const HeroSection = () => {
 
           {/* Download CV Button */}
           <a
-            href="/GUEBGHIDLyes.pdf"
+            href="/GUEBGHID.pdf"
             download
             className="inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-full shadow-md hover:scale-105 transform transition duration-300 animate-bounce border-4 border-white"
           >

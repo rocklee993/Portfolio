@@ -10,10 +10,10 @@ const PlayerProfileRPG = () => {
       <div className="flex justify-center items-center px-6">
         <div className="w-[1200px] bg-[#2A2D4A] p-8 rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.7)] border-4 border-gray-600 hover:border-yellow-400 transition duration-300 ease-in-out relative grid grid-cols-5 gap-8">
 
-          {/* Character Portrait + Personal Info */}
+          {/* Character Portrait + Hobbies + Languages */}
           <div className="col-span-2 flex flex-col items-center">
             <img
-              src="/images/pixel.png"
+              src="/images/photo_id.png"
               alt="Player"
               className="w-40 h-40 object-cover rounded-full border-4 border-yellow-500 shadow-[0_0_15px_rgba(255,255,0,0.6)] z-10"
             />
@@ -28,6 +28,18 @@ const PlayerProfileRPG = () => {
               <p><span className="text-yellow-300">Location:</span> Mulhouse, France</p>
               <p><span className="text-yellow-300">Education:</span> Master's in Informatics Management</p>
             </div>
+
+            
+
+            {/* Languages */}
+            <div className="text-left mt-5 text-gray-300 text-sm space-y-1">
+              <h4 className="text-xl text-yellow-300 mb-3 drop-shadow-[0_0_3px_rgba(255,255,0,0.7)]">Languages</h4>
+              <ul className="space-y-2 text-sm list-disc list-inside">
+                <li>French: Fluent</li>
+                <li>English: Professional Working Proficiency</li>
+                <li>German: Beginner</li>
+              </ul>
+            </div>
           </div>
 
           {/* Separator */}
@@ -35,41 +47,33 @@ const PlayerProfileRPG = () => {
             <div className="w-1 bg-gray-600 h-full mx-6 rounded-full"></div>
           </div>
 
-          {/* About Me + Interests */}
+          {/* About Me */}
           <div className="col-span-2 space-y-8">
-            {/* About Me */}
             <div className="text-left text-gray-300">
               <h4 className="text-xl text-yellow-300 mb-3 drop-shadow-[0_0_3px_rgba(255,255,0,0.7)]">About Me</h4>
               <p className="text-sm leading-relaxed">
-                Passionate about creating immersive experiences and software. Currently learning Godot for game development and always exploring new technologies.
+                Enthusiastic developer with a strong foundation in software engineering and IT. Experienced in building web applications and solving complex problems. Seeking opportunities to contribute to innovative projects and grow professionally.
               </p>
             </div>
-
-            {/* Interests */}
-            <div className="text-left text-gray-300">
-              <h4 className="text-xl text-yellow-300 mb-3 drop-shadow-[0_0_3px_rgba(255,255,0,0.7)]">Interests</h4>
+            {/* Hobbies */}
+            <div className="text-left mt-5 text-gray-300 text-sm space-y-1">
+              <h4 className="text-xl text-yellow-300 mb-3 drop-shadow-[0_0_3px_rgba(255,255,0,0.7)]">Hobbies</h4>
               <ul className="space-y-2 text-sm list-disc list-inside">
-                <li>Coding & Software Development</li>
-                <li>Learning New Tech</li>
-                <li>Video Editing & Content Creation</li>
-                <li>Game Development</li>
-              </ul>
-            </div>
+                <li>Exploring new technologies</li>
+                
 
-            {/* Languages */}
-            <div className="text-left text-gray-300">
-              <h4 className="text-xl text-yellow-300 mb-3 drop-shadow-[0_0_3px_rgba(255,255,0,0.7)]">Languages</h4>
-              <ul className="space-y-2 text-sm list-disc list-inside">
-                <li>English: Better than Average</li>
-                <li>French: Intermediate</li>
-                <li>German: Beginner</li>
+                <li>Playing video games</li>
+                <li>Reading science fiction novels</li> 
+                <li>Listening to music and learning how it's made</li>
+                <li>Content Creation and Video Editing</li>
+                
               </ul>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
-
   );
 };
 
