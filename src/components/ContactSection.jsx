@@ -37,7 +37,7 @@ const FooterRPG = () => {
           </a>
 
           <a
-            href="/GUEBGHIDLyes.pdf" // Make sure this path matches your actual CV file
+            href="/GUEBGHID.pdf" // Make sure this path matches your actual CV file
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-yellow-300 transition duration-300 ease-in-out"
