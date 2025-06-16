@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect, useMemo } from "react"; // Ajout de useMemo
-import { useTranslation } from 'react-i18next'; // Importez useTranslation
+import React, { useState, useRef, useEffect, useMemo } from "react";
+import { useTranslation } from 'react-i18next';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-// Les données statiques des projets (ID, image, technologies, lien GitHub)
 const projectStaticData = [
     {
         id: "castflow",
@@ -31,9 +31,8 @@ const projectStaticData = [
 
 
 const ProjectsSection = () => {
-    const { t, i18n } = useTranslation(); // Initialisez le hook
+    const { t, i18n } = useTranslation();
 
-    // Fusionner les données statiques avec les traductions
     const translatedProjectsArray = t('projectsSection.projectsList', { returnObjects: true }) || [];
     const projects = useMemo(() => projectStaticData.map(staticProject => {
         const translatedDetails = Array.isArray(translatedProjectsArray)
@@ -46,44 +45,28 @@ const ProjectsSection = () => {
         };
     }), [i18n.language, translatedProjectsArray]);
 
-
-    const [characterPosition, setCharacterPosition] = useState(200);
     const [activeProject, setActiveProject] = useState(0);
-    // const characterRef = useRef(null); // Non utilisé
     const containerRef = useRef(null);
-
+    
     const flagSpacing = 320;
     const flagPositions = useMemo(() =>
         projects.map((_, index) => (index + 1) * flagSpacing),
     [projects.length]);
+    
+    const characterPosition = useMemo(() => {
+        if (flagPositions.length === 0) return 200;
+        return flagPositions[activeProject] - 15; 
+    }, [activeProject, flagPositions]);
+
 
     const moveCharacter = (direction) => {
-        const container = containerRef.current;
-        if (!container || flagPositions.length === 0) return;
-
-        const stepSize = 50;
-        const characterWidth = 30;
-
-        const roadStart = flagPositions[0] - 100;
-        const roadEnd = flagPositions[flagPositions.length - 1] + 100;
-
-        let newPosition = characterPosition + direction * stepSize;
-        newPosition = Math.max(
-            roadStart,
-            Math.min(roadEnd - characterWidth, newPosition)
-        );
-        setCharacterPosition(newPosition);
-
-        for (let i = 0; i < flagPositions.length; i++) {
-            const flagPos = flagPositions[i];
-            // Ajuster la sensibilité si nécessaire
-            if (Math.abs(newPosition - flagPos) < stepSize / 1.5) { 
-                setActiveProject(i);
-                break;
-            }
+        let newActiveProject = activeProject + direction;
+        newActiveProject = Math.max(0, Math.min(projects.length - 1, newActiveProject));
+        if (newActiveProject !== activeProject) {
+            setActiveProject(newActiveProject);
         }
     };
-
+    
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === "ArrowRight") {
@@ -94,13 +77,11 @@ const ProjectsSection = () => {
         };
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [characterPosition, flagPositions]); // Inclure flagPositions si moveCharacter en dépend implicitement
+    }, [activeProject, projects.length]); 
 
     useEffect(() => {
-        const initialPos = flagPositions.length > 0 ? flagPositions[0] - 100 + 50 : 200;
-        setCharacterPosition(initialPos);
         setActiveProject(0);
-    }, [i18n.language, flagPositions.length]);
+    }, [i18n.language]);
 
 
     return (
@@ -109,21 +90,36 @@ const ProjectsSection = () => {
             className="min-h-[110vh] bg-[#0a0a0a] text-white font-pixel py-20 relative overflow-hidden"
         >
             <h2 className="text-4xl text-yellow-300 text-center mb-2">
-                {t('projectsSection.title')} {/* Traduction */}
+                {t('projectsSection.title')}
             </h2>
-            <div className="text-center mb-8">
-                <p className="text-gray-400 text-sm animate-pulse flex items-center justify-center gap-2">
-                    <span className="text-lg">←</span> {t('projectsSection.instructions')}{" "} {/* Traduction */}
-                    <span className="text-lg">→</span>
+            <div className="text-center mb-8 flex items-center justify-center gap-4">
+                <button 
+                    onClick={() => moveCharacter(-1)} 
+                    disabled={activeProject === 0}
+                    className="text-green-300 hover:text-yellow-300 disabled:text-gray-600 disabled:cursor-not-allowed text-2xl p-2 transition"
+                    aria-label={t('common.previous', { defaultValue: 'Previous Project' })}
+                >
+                    <FaArrowLeft />
+                </button>
+                <p className="text-gray-400 text-sm">
+                    {t('projectsSection.instructions')}
                 </p>
+                <button 
+                    onClick={() => moveCharacter(1)}
+                    disabled={activeProject === projects.length - 1}
+                    className="text-green-300 hover:text-yellow-300 disabled:text-gray-600 disabled:cursor-not-allowed text-2xl p-2 transition"
+                    aria-label={t('common.next', { defaultValue: 'Next Project' })}
+                >
+                    <FaArrowRight />
+                </button>
             </div>
 
-            {/* S'assurer que flagPositions a des éléments avant de calculer les styles */}
             {projects.length > 0 && flagPositions.length > 0 && (
                 <div className="relative" ref={containerRef} 
-                     style={{ minWidth: `${flagPositions[flagPositions.length - 1] + 150 + 800}px`}} // Assurer une largeur minimale pour le défilement
+                     style={{ 
+                        minWidth: `${flagPositions[flagPositions.length - 1] + 150 + 800}px`,
+                     }}
                 >
-                    {/* Arrow indicator replacing character */}
                     <div
                         style={{
                             position: "absolute",
@@ -134,29 +130,25 @@ const ProjectsSection = () => {
                             borderLeft: "15px solid transparent",
                             borderRight: "15px solid transparent",
                             borderBottom: "20px solid #00FF88",
-                            transition: "left 0.5s ease", // Gardé la transition originale
+                            transition: "left 0.3s ease-out", 
                             zIndex: 10,
                             userSelect: "none",
                         }}
                         aria-label={t('projectsSection.currentProjectSelectorAriaLabel')} 
                     />
 
-                    {/* Yellow Line (Road) */}
                     <div
                         className="absolute bg-yellow-300 h-1 top-1/2 transform -translate-y-1/2"
                         style={{
                             left: `${flagPositions[0] - 155}px`,
                             width: `${flagPositions[flagPositions.length - 1] - flagPositions[0] + 275}px`,
-                            // zIndex: 1, // Optionnel, si besoin de contrôler la superposition
                         }}
                     ></div>
 
-                    {/* Flags and Projects */}
                     <div className="whitespace-nowrap">
-                        <div className="inline-flex gap-[200px] relative items-start p-6"> {/* p-6 original */}
-                            {/* Flags */}
-                            <div className="flex"> {/* Conteneur original pour les drapeaux */}
-                                {projects.map((project, index) => ( // Utiliser project.id pour la clé si possible
+                        <div className="inline-flex gap-[200px] relative items-start p-6">
+                            <div className="flex">
+                                {projects.map((project, index) => (
                                     <div
                                         key={`flag-${project.id || index}`}
                                         className={`transition-all duration-300 ease-in-out transform ${
@@ -168,7 +160,7 @@ const ProjectsSection = () => {
                                             fontSize: "1.5rem",
                                             position: "absolute",
                                             left: `${flagPositions[index] - 10}px`, 
-                                            top:"10px" // Position originale
+                                            top:"10px"
                                         }}
                                     >
                                         {activeProject === index ? "🚩" : "⚪"}
@@ -176,43 +168,42 @@ const ProjectsSection = () => {
                                 ))}
                             </div>
 
-                            {/* Project Cards */}
-                            <div className="absolute transition-all duration-500 ease-in-out"> {/* Conteneur original des cartes */}
+                            <div className="absolute transition-all duration-500 ease-in-out">
                                 {projects.map((project, index) => (
                                     <div
-                                        key={project.id || index} // Utiliser project.id ici aussi
+                                        key={project.id || index}
                                         className={`flex bg-[#1c1c3c] p-6 rounded-lg shadow-lg transition-all duration-1000 ease-in-out ${
                                             activeProject === index
-                                                ? "opacity-100 scale-100 visible z-10" // Classes originales
-                                                : "opacity-10 scale-0 visible"    // Classes originales
+                                                ? "opacity-100 scale-100 visible z-10"
+                                                : "opacity-10 scale-0 pointer-events-none" 
                                         }`}
                                         style={{
-                                            position: "absolute", // Positionnement original
-                                            left: `420px`,        // Positionnement original
-                                            top: `50px`,         // Positionnement original
-                                            width: "800px",        // Dimensions originales
-                                            minHeight: "450px",    // Dimensions originales
-                                            maxHeight: "500px",    // Dimensions originales
+                                            position: "absolute",
+                                            left: `420px`,
+                                            top: `50px`,
+                                            width: "800px",
+                                            minHeight: "450px",
+                                            maxHeight: "500px",
                                         }}
                                     >
-                                        {/* Image Section */}
+                                        {/* MODIFICATION ICI POUR LA TAILLE DE L'IMAGE */}
                                         <img
-                                            src={project.img} // Assurez-vous que les chemins sont corrects
-                                            alt={project.name} // Nom traduit pour alt
-                                            className="w-80 h-auto max-h-94 object-cover rounded-lg mr-6" // Classes originales
+                                            src={project.img}
+                                            alt={project.name}
+                                            
+                                            className="w-80 h-96 object-cover rounded-lg mr-6 self-center" 
+                                            
                                         />
-
-                                        {/* Text Content */}
                                         <div className="flex-1 flex flex-col justify-between">
                                             <div>
                                                 <h3 className="text-base text-yellow-300 font-bold mb-2">
-                                                    {project.name} {/* Nom traduit */}
+                                                    {project.name}
                                                 </h3>
                                                 <p className="text-xs text-gray-300 mb-4 whitespace-normal">
-                                                    {project.description} {/* Description traduite */}
+                                                    {project.description}
                                                 </p>
                                                 <div>
-                                                    <strong className="text-[#00FF88]">{t('projectsSection.technologiesLabel')}</strong> {/* Traduction */}
+                                                    <strong className="text-[#00FF88]">{t('projectsSection.technologiesLabel')}</strong>
                                                     <ul className="list-disc list-inside text-sm text-gray-300 ml-4">
                                                         {project.technologies.map((tech, i) => (
                                                             <li key={i}>{tech}</li>
@@ -220,15 +211,13 @@ const ProjectsSection = () => {
                                                     </ul>
                                                 </div>
                                             </div>
-
-                                            {/* GitHub Link */}
                                             <a
                                                 href={project.github}
-                                                className="text-blue-400 underline text-sm mb-15 hover:text-blue-200 transition"
+                                                className="text-blue-400 underline text-sm hover:text-blue-200 transition mt-4 self-start" // Ajout de mt-4 et self-start
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
-                                                {t('projectsSection.viewOnGithub')} {/* Traduction */}
+                                                {t('projectsSection.viewOnGithub')}
                                             </a>
                                         </div>
                                     </div>
