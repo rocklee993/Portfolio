@@ -1,0 +1,111 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "profile": "Profile"
+  },
+  "footer": {
+    "copyright": "© {{year}} Lyes Guebghid. All rights reserved.",
+    "madeWith": "Made with React & Love"
+  },
+  "footerRPG": {
+    "connectWithMe": "Connect With Me"
+  },
+  "skillsSection": {
+    "title": "MY SKILLS",
+    "cardTitleFrontend": "Frontend",
+    "cardTitleBackend": "Backend",
+    "cardTitleLanguages": "Languages",
+    "cardTitleOther": "Other"
+  },
+  "heroSection": {
+    "name": "LYES GUEBGHID",
+    "animatedTitles": [
+      "CS Student",
+      "Web Developer",
+      "Software Developer",
+      "Game Developer",
+      "Pixel Tinkerer",
+      "Code Alchemist",
+      "Curious Learner"
+    ],
+    "quote": "Passionate about learning, coding, and bringing ideas to life through games.",
+    "downloadCVButton": "⬇ Download CV",
+    "avatarAlt": "Avatar"
+  },
+  "pixelHeader": {
+    "title": "MY PORTFOLIO"
+  },
+  "projectsSection": {
+    "title": "My Projects",
+    "instructions": "Use arrow keys to move",
+    "technologiesLabel": "Technologies:",
+    "viewOnGithub": "View on GitHub",
+    "currentProjectSelectorAriaLabel": "Current project selector",
+    "projectsList": [
+      {
+        "id": "castflow",
+        "name": "CastFlow",
+        "description": "CastFlow is a platform that connects aspiring talent with recruiters in the entertainment industry. It offers a user-friendly interface for talent to showcase their skills and for recruiters to find the right candidates."
+      },
+      {
+        "id": "elekable",
+        "name": "Elekable",
+        "description": "Elekable is a platform that allows users to buy and sell electricity in a transparent and secure market. It focuses on real-time pricing, renewable energy, and secure transactions, making it easier for users to manage their energy needs."
+      },
+      {
+        "id": "flightReservation",
+        "name": "Flight Reservation App",
+        "description": "Developed a desktop application using Java (Swing) for booking and managing flight reservations. Features include real-time flight search, passenger registration, and seat selection, with a user-friendly GUI and local database integration for data persistence."
+      },
+      {
+        "id": "treeview",
+        "name": "TreeView Component",
+        "description": "Built with Blazor (.NET), this TreeView component loads data only when nodes are expanded, improving performance for large datasets. It supports asynchronous loading, nested structures, and is fully reusable."
+      }
+    ]
+  },
+  "playerProfile": {
+    "sectionTitle": "Player Profile",
+    "avatarAlt": "Player",
+    "name": "LYES GUEBGHID",
+    "subtitle": "Developer | Master of Informatics",
+    "ageLabel": "Age:",
+    "ageValue": "24",
+    "locationLabel": "Location:",
+    "locationValue": "Mulhouse, France",
+    "educationLabel": "Education:",
+    "educationValue": "Master's in Informatics Management",
+    "languagesTitle": "Languages",
+    "languageFrench": "French: Fluent",
+    "languageEnglish": "English: Professional Working Proficiency",
+    "languageGerman": "German: Beginner",
+    "aboutMeTitle": "About Me",
+    "aboutMeParagraph": "Enthusiastic developer with a strong foundation in software engineering and IT. Experienced in building web applications and solving complex problems. Seeking opportunities to contribute to innovative projects and grow professionally.",
+    "hobbiesTitle": "Hobbies",
+    "hobbyTech": "Exploring new technologies",
+    "hobbyGames": "Playing video games",
+    "hobbySciFi": "Reading science fiction novels",
+    "hobbyMusic": "Listening to music and learning how it's made",
+    "hobbyContent": "Content Creation and Video Editing"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewProject": "View Project",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "backToHome": "Back to Home",
+    "sendMessage": "Send Message",
+    "loading": "Loading...",
+    "ariaLabels": {
+      "github": "GitHub Profile",
+      "linkedin": "LinkedIn Profile",
+      "email": "Send Email",
+      "resume": "View Resume/CV"
+    }
+  }
+}

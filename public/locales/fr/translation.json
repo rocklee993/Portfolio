@@ -1,0 +1,111 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "contact": "Contact",
+    "profile": "Profil"
+  },
+  "footer": {
+    "copyright": "© {{year}} Lyes Guebghid. Tous droits réservés.",
+    "madeWith": "Fait avec React & Amour"
+  },
+  "footerRPG": {
+    "connectWithMe": "Restons Connectés"
+  },
+  "skillsSection": {
+    "title": "MES COMPÉTENCES",
+    "cardTitleFrontend": "Frontend",
+    "cardTitleBackend": "Backend",
+    "cardTitleLanguages": "Langages",
+    "cardTitleOther": "Autres"
+  },
+  "heroSection": {
+    "name": "LYES GUEBGHID",
+    "animatedTitles": [
+      "Étudiant en Informatique",
+      "Développeur Web",
+      "Développeur Logiciel",
+      "Développeur de Jeux",
+      "Bricoleur de Pixels",
+      "Alchimiste du Code",
+      "Apprenant Curieux"
+    ],
+    "quote": "Passionné par l'apprentissage, le code et la concrétisation d'idées à travers les jeux.",
+    "downloadCVButton": "⬇ Télécharger CV",
+    "avatarAlt": "Avatar"
+  },
+  "pixelHeader": {
+    "title": "MON PORTFOLIO"
+  },
+  "projectsSection": {
+    "title": "Mes Projets",
+    "instructions": "Utilisez les flèches pour naviguer",
+    "technologiesLabel": "Technologies :",
+    "viewOnGithub": "Voir sur GitHub",
+    "currentProjectSelectorAriaLabel": "Sélecteur de projet actuel",
+    "projectsList": [
+      {
+        "id": "castflow",
+        "name": "CastFlow",
+        "description": "CastFlow est une plateforme qui met en relation les talents en herbe avec les recruteurs de l'industrie du divertissement. Elle offre une interface conviviale permettant aux talents de présenter leurs compétences et aux recruteurs de trouver les bons candidats."
+      },
+      {
+        "id": "elekable",
+        "name": "Elekable",
+        "description": "Elekable est une plateforme permettant aux utilisateurs d'acheter et de vendre de l'électricité sur un marché transparent et sécurisé. Elle se concentre sur la tarification en temps réel, les énergies renouvelables et les transactions sécurisées, facilitant la gestion des besoins énergétiques des utilisateurs."
+      },
+      {
+        "id": "flightReservation",
+        "name": "App de Réservation de Vols",
+        "description": "Développement d'une application de bureau en Java (Swing) pour la réservation et la gestion de vols. Fonctionnalités : recherche de vols en temps réel, enregistrement des passagers, sélection des sièges, avec une interface graphique conviviale et intégration d'une base de données locale pour la persistance des données."
+      },
+      {
+        "id": "treeview",
+        "name": "Composant TreeView",
+        "description": "Construit avec Blazor (.NET), ce composant TreeView charge les données uniquement lors de l'expansion des nœuds, améliorant les performances pour les grands ensembles de données. Il prend en charge le chargement asynchrone, les structures imbriquées et est entièrement réutilisable."
+      }
+    ]
+  },
+  "playerProfile": {
+    "sectionTitle": "Profil du Joueur",
+    "avatarAlt": "Joueur",
+    "name": "LYES GUEBGHID",
+    "subtitle": "Développeur | Master en Informatique",
+    "ageLabel": "Âge :",
+    "ageValue": "24",
+    "locationLabel": "Lieu :",
+    "locationValue": "Mulhouse, France",
+    "educationLabel": "Formation :",
+    "educationValue": "Master en Gestion Informatique",
+    "languagesTitle": "Langues",
+    "languageFrench": "Français : Courant",
+    "languageEnglish": "Anglais : Compétence Professionnelle",
+    "languageGerman": "Allemand : Débutant",
+    "aboutMeTitle": "À Propos de Moi",
+    "aboutMeParagraph": "Développeur enthousiaste avec une solide base en génie logiciel et en informatique. Expérimenté dans la création d'applications web et la résolution de problèmes complexes. À la recherche d'opportunités pour contribuer à des projets innovants et évoluer professionnellement.",
+    "hobbiesTitle": "Loisirs",
+    "hobbyTech": "Explorer les nouvelles technologies",
+    "hobbyGames": "Jouer aux jeux vidéo",
+    "hobbySciFi": "Lire des romans de science-fiction",
+    "hobbyMusic": "Écouter de la musique et apprendre comment elle est faite",
+    "hobbyContent": "Création de contenu et montage vidéo"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "viewProject": "Voir le Projet",
+    "liveDemo": "Démo Live",
+    "sourceCode": "Code Source",
+    "backToHome": "Retour à l'accueil",
+    "sendMessage": "Envoyer le Message",
+    "loading": "Chargement...",
+    "ariaLabels": {
+      "github": "Profil GitHub",
+      "linkedin": "Profil LinkedIn",
+      "email": "Envoyer un Email",
+      "resume": "Voir le CV"
+    }
+  }
+}
