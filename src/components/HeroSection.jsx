@@ -66,7 +66,7 @@ const HeroSection = () => {
               </React.Fragment>
             ))}
           </h1>
-          <div className="text-2xl sm:text-3xl text-green-400 font-bold h-10">
+          <div className="text-2xl sm:text-3xl text-gray-300 font-bold h-10">
             <span>{typeof displayText === 'string' ? displayText : ''}</span>
             <span className="animate-blink">|</span>
           </div>
