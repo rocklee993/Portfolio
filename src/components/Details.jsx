@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'; // Importez useTranslation
 
 const skillsData = { // Renommé pour éviter la confusion avec la clé 'skills' de la navbar
   frontend: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
-  backend: ["Node.js", "Express", "Python", "Django", "Dotnet", "MySQL"],
+  backend: ["Node.js", "Express", "Django", "Dotnet", "MySQL"],
   languages: ["C++", "Java", "Python", "C#", "JavaScript", "PHP", "Bash"],
   other: ["Adobe Premiere Pro", "After Effects", "Photoshop", "Figma","Godot", "Unity" ,"Blender", ],
 };

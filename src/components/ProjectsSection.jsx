@@ -16,13 +16,13 @@ const projectStaticData = [
     },
     {
         id: "flightReservation",
-        img: "/images/vol.jpg",
+        img: "/images/plane.png",
         technologies: ["Java", "Swing","MySQL", "JDBC"],
         github: "https://github.com/rocklee993/Projetbdd"
     },
     {
         id: "treeview",
-        img: "/images/tree.png",
+        img: "/images/treeviw.png",
         technologies: ["DotNet", "C#","Blazor", "SQL Server"],
         github: "https://github.com/rocklee993/TreeView"
     },
