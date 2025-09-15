@@ -7,7 +7,7 @@ const FooterRPG = () => {
   const currentYear = new Date().getFullYear(); // Obtenez l'année actuelle
 
   return (
-    <footer className="bg-[#1C1C1C] border-t-4 border-gray-700 text-white font-pixel py-10">
+    <footer className="bg-[#1C1C1C] border-t-4 border-gray-700 text-white  py-10">
       <div className="flex flex-col items-center justify-center space-y-6">
 
         {/* Footer Title */}

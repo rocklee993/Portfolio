@@ -78,7 +78,7 @@ const SkillCard = ({ titleKey, list, category, index }) => {
 
   return (
     <div 
-      className={`bg-[#1a1a2e] border-2 ${colors.border} ${colors.bgHover} rounded-2xl p-6 w-full h-full shadow-2xl hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-500 font-pixel relative overflow-hidden group`}
+      className={`bg-[#1a1a2e] border-2 ${colors.border} ${colors.bgHover} rounded-2xl p-6 w-full h-full shadow-2xl hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-500 relative overflow-hidden group`}
       style={{
         animationDelay: `${index * 150}ms`
       }}
@@ -98,7 +98,7 @@ const SkillCard = ({ titleKey, list, category, index }) => {
           </h3>
         </div>
 
-        {/* Skills list - flex grow to fill available space */}
+        {/* Skills list */}
         <div className="flex-grow">
           <div className="grid grid-cols-1 gap-3">
             {list.map((item, skillIndex) => (
@@ -119,8 +119,7 @@ const SkillCard = ({ titleKey, list, category, index }) => {
                 </div>
               </div>
             ))}
-            
-            {/* Add empty placeholders for shorter lists to maintain consistent height */}
+            {/* Empty placeholders for consistent height */}
             {list.length < 7 && [...Array(7 - list.length)].map((_, i) => (
               <div key={`placeholder-${i}`} className="py-3 px-4 opacity-0">
                 <span className="text-sm md:text-base">&nbsp;</span>
@@ -128,8 +127,6 @@ const SkillCard = ({ titleKey, list, category, index }) => {
             ))}
           </div>
         </div>
-
-
       </div>
     </div>
   );
@@ -141,7 +138,7 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#1B1B38] to-[#0a0a0a] text-white py-20 px-6 flex flex-col items-center font-pixel relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#1B1B38] to-[#0a0a0a] text-white py-20 px-6 flex flex-col items-center relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -158,12 +155,10 @@ const SkillsSection = () => {
             {t('skillsSection.title')}
           </h2>
           <div className="inline-block w-32 h-1 bg-gradient-to-r from-yellow-200 to-[#00FF88] mb-4"></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Explore my technical arsenal and creative tools
-          </p>
+          
         </div>
 
-        {/* Skills grid with equal height cards */}
+        {/* Skills grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 auto-rows-fr">
           <div className="animate-fadeInUp">
             <SkillCard titleKey="skillsSection.cardTitleLanguages" list={skillsData.languages} category="languages" index={0} />
@@ -178,8 +173,6 @@ const SkillsSection = () => {
             <SkillCard titleKey="skillsSection.cardTitleOther" list={skillsData.other} category="other" index={3} />
           </div>
         </div>
-
-        
       </div>
 
       <style jsx>{`

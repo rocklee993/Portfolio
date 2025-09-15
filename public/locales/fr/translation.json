@@ -70,10 +70,10 @@
     ]
   },
   "playerProfile": {
-    "sectionTitle": "Profil du Joueur",
+    "sectionTitle": "Mon Profil",
     "avatarAlt": "Joueur",
     "name": "LYES GUEBGHID",
-    "subtitle": "Développeur | Master en Informatique",
+    "subtitle": "Développeur",
     "ageLabel": "Âge :",
     "ageValue": "24",
     "locationLabel": "Lieu :",
@@ -91,7 +91,12 @@
     "hobbyGames": "Jouer aux jeux vidéo",
     "hobbySciFi": "Lire des romans de science-fiction",
     "hobbyMusic": "Écouter de la musique et apprendre comment elle est faite",
-    "hobbyContent": "Création de contenu et montage vidéo"
+    "hobbyContent": "Création de contenu et montage vidéo",
+    "softSkillsTitle": "Soft Skills",
+    "softSkillProblemSolving": "Résolution de problèmes",
+    "softSkillTeamwork": "Travail d'équipe",
+    "softSkillAdaptability": "Adaptabilité",
+    "softSkillCreativity": "Créativité"
   },
   "common": {
     "learnMore": "En savoir plus",
