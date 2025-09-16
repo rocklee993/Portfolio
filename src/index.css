@@ -12,3 +12,22 @@
 html {
   scroll-behavior: smooth;
 }
+/* In your global CSS file */
+@keyframes spin {
+  from { 
+    transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg)) rotateZ(0deg); 
+  }
+  to { 
+    transform: rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg)) rotateZ(360deg); 
+  }
+}
+
+@keyframes spin-reverse {
+  from { 
+    /* The second rotation is to counteract the parent's spin on the Y axis */
+    transform: rotateZ(0deg) rotateY(calc(-1 * var(--rotateY, 0deg))) rotateX(calc(-1 * var(--rotateX, 0deg))); 
+  }
+  to { 
+    transform: rotateZ(-360deg) rotateY(calc(-1 * var(--rotateY, 0deg))) rotateX(calc(-1 * var(--rotateX, 0deg))); 
+  }
+}
