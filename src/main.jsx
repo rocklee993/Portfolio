@@ -10,8 +10,8 @@ const root = createRoot(rootElement); // createRoot prend l'élément DOM direct
 root.render(
   <StrictMode>
     {/* Enveloppez votre App avec Suspense */}
-    <Suspense fallback={<div>Loading...</div>}> {/* Vous pouvez personnaliser ce fallback */}
+    
       <App />
-    </Suspense>
+    
   </StrictMode>
 );
